@@ -1,0 +1,39 @@
+.title-tooltips {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #457DFB;
+    border-radius: 0.1em;
+    font-size: 0.7em;
+    padding: 0.25em 0.5em;
+    position: absolute;
+        bottom: 2em;
+        left: calc(50% - 8em);
+    text-align: center;
+    transform: translateY(-0.25);
+    width: 16em;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 0.5s,
+                opacity 0.2s ease-out,
+                transform 0.5s cubic-bezier(0, 1, 0.5, 1);
+}
+
+.title-tooltips::after {
+    content: "";
+    border-style: solid;
+    border-color: #457DFB transparent;
+    border-radius: 0;
+    border-width: 0.2em 0.2em 0 0.2em;
+    position: absolute;
+        bottom: -0.5em;
+        left: calc(50% - 0.2em);
+    width: 0;
+}
+
+.anchor-tooltip:hover .title-tooltips {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition: opacity 0.2s ease-out,
+                transform 0.5s cubic-bezier(0, 1, 0.5, 1);
+}
